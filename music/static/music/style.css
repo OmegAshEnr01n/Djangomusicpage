@@ -1,0 +1,54 @@
+body{
+	background: url("images/background2.jpg");
+	background-size: cover;
+}
+
+.navbar
+{
+	border-radius: 0;
+}
+
+.navbar-brand
+{
+	font-family: 'Satisfy', cursive;
+}
+
+#album
+{
+	text-align: center;
+	font-family: 'Bungee', cursive;
+	border-radius: 0px;
+	border-width: 1px;
+	border-color: black;
+	padding-bottom: 5px;
+	box-shadow: 5px 5px 5px #888898;
+}
+#album a:link{
+	color: #000000;
+}
+#album a:visited{
+	color: #000000;
+}
+#album a:hover{
+	text-decoration: none;
+}
+#album:hover{
+	box-shadow: 5px 5px 5px #555555;
+}
+.thumbnail{
+	padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+#user{
+	margin-bottom: 19px;
+    margin-left: 30px;
+    margin-right: 12px;
+    margin-top: 12px;
+}
+
+.favbutton:hover span{
+	color: blue;
+	
+}

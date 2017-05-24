@@ -1,0 +1,40 @@
+{% extends 'music/base.html' %}
+
+{% block title %}Albums{% endblock %}
+{% block body %}
+	<img src='{{album.album_logo}}'>
+
+	<h1>{{album.album_title}}</h1>
+	<h2>{{album.artist}}</h2>
+
+	{% if error_message %}
+		<p><strong>{{ error_message }}</strong></p>
+	{% endif %}
+
+	{% if song_pk %}
+	{{song_pk}}
+	{% endif %}
+
+	<!--form action="{% url 'music:favorite' album.id %}" method="post">
+		{% csrf_token %}
+		{% for song in album.song_set.all %}
+			<input value="{{song.pk}}" name = 'song' type="radio" id="song{{ forloop.counter }}" />
+			<label for = 'song{{ forloop.counter }}'>
+				{{song.song_title}}
+				{% if song.isfav %}
+					<img src="http://static.lioden.com/images/emotes/bored.png">
+				{% endif %}
+			</label><br>
+		{% endfor %}
+		<input type="submit" value="favorite" name = 'fav_button'>
+	</form-->
+	<ol>
+
+	{% for song in album.song_set.all %}
+	<li>
+	{{song.song_title}}<br>
+	</li>
+	{% endfor %}
+	
+	</ol>
+{% endblock %}

@@ -1,0 +1,42 @@
+
+{% extends 'music/base.html' %}
+
+{% block body %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12" id="user">
+			<h1>Albums</h1>
+		</div>
+		{% if All %}
+			{% for album in All %}
+				<div class="col-md-3 col-sm-4 col-lg-2">
+					<div class="thumbnail" id="album">	
+						<a href="{% url 'music:information' album.id %}">
+							<img src="{{album.album_logo}}">
+							<h3>{{album.album_title}}</h3>
+						</a>
+						<span style="margin-right: 7px">By  {{album.artist}}</span>
+						<a href="#" class="btn btn-default btn-sm favbutton" >
+							<span class="{% if not album.isfav %}glyphicon glyphicon-star-empty{% else %}glyphicon glyphicon-star active{% endif %}" style="{% if album.isfav %}{color: blue;}{% endif %}"></span>
+						</a>
+					</div>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
+			
+			<ul>
+				{% for album in All %}
+					<li>
+					<a href="{% url 'music:information' album.pk %}">{{album.album_title}}</a>
+					</li>
+				{% endfor %}
+			</ul>
+
+			
+				
+			
+			
